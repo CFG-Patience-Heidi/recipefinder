@@ -1,140 +1,202 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style type="text/css">  
-        body {  
-            margin: 0;  
-            background: #e6e6e6;  
-        }  
-        .showSlide {  
-            display: none  
-        }  
-            .showSlide img {  
-                width: 100%;  
-            }  
-        .slidercontainer {  
-            max-width: 1000px;  
-            position: relative;  
-            margin: auto;  
-        }  
-        .left, .right {  
-            cursor: pointer;  
-            position: absolute;  
-            top: 50%;  
-            width: auto;  
-            padding: 16px;  
-            margin-top: -22px;  
-            color: rgb(255, 94, 0);  
-            font-weight: bold;  
-            font-size: 18px;  
-            transition: 0.6s ease;  
-            border-radius: 0 3px 3px 0;  
-        }  
-        .right {  
-            right: 0;  
-            border-radius: 3px 0 0 3px;  
-        }  
-            .left:hover, .right:hover {  
-                background-color: rgba(115, 115, 115, 0.8);  
-            }  
-        .content {  
-            color: #000000;  
-            font-size: 30px;  
-            padding: 8px 12px;  
-            position: absolute;  
-            top: 10px;  
-            width: 100%;  
-            text-align: center;  
-        }  
-        .active {  
-            background-color: #717171;  
-        }  
-        /* Fading animation */  
-        .fade {  
-            -webkit-animation-name: fade;  
-            -webkit-animation-duration: 1.5s;  
-            animation-name: fade;  
-            animation-duration: 1.5s;  
-        }  
-        @-webkit-keyframes fade {  
-            from {  
-                opacity: .4  
-            }  
-            to {  
-                opacity: 1  
-            }  
-        }  
-  
-        @keyframes fade {  
-            from {  
-                opacity: .4  
-            }  
-            to {  
-                opacity: 1  
-            }  
-        }  
-    </style>  
-    <title>Recipe Finder</title>
-  </head>
-  <body>
-    <body>  
-        <div class="slidercontainer">  
-            <div class="showSlide fade">  
-                <img src="slide1.jpg"/> 
-                <a style="display:block" href="fruit-recipes">
-                <div class="content">Fruit Recipes</div>  
-            </a>
-            </div>  
-            <div class="showSlide fade">  
-                <img src="slide2.jpg"/>  
-                <a style="display:block" href="carb-recipes">
-                <div class="content">Carb recipes</div>  
-            </a>
-            </div>  
-      
-            <div class="showSlide fade">  
-                <img src="slide3.jpg"/>  
-                <a style="display:block" href="protein-recipes">
-                <div class="content">Protein recipes</div>  
-            </a>
-            </div>  
-            <div class="showSlide fade">
-                <img src="slide4.jpg"/>  
-                <a style="display:block" href="veg-recipes"> 
-                <div class="content">Vegetable recipes</div>  
-                </a>
-            </div>  
-            <!-- Navigation arrows -->  
-            <a class="left" onclick="nextSlide(-1)">❮</a>  
-            <a class="right" onclick="nextSlide(1)">❯</a>  
-        </div>  
 
-        <script type="text/javascript">  
-            var slide_index = 1;  
-            displaySlides(slide_index);  
-      
-            function nextSlide(n) {  
-                displaySlides(slide_index += n);  
-            }  
-      
-            function currentSlide(n) {  
-                displaySlides(slide_index = n);  
-            }  
-      
-            function displaySlides(n) {  
-                var i;  
-                var slides = document.getElementsByClassName("showSlide");  
-                if (n > slides.length) { slide_index = 1 }  
-                if (n < 1) { slide_index = slides.length }  
-                for (i = 0; i < slides.length; i++) {  
-                    slides[i].style.display = "none";  
-                }  
-                slides[slide_index - 1].style.display = "block";  
-            }  
-        </script>  
-    </body>   
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.5/components/buttons/">
+    <script src="https://kit.fontawesome.com/973f3f7c0c.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            background: #e6e6e6;
+        }
+
+        .showSlide {
+            display: none
+        }
+
+        .showSlide img {
+            width: 100%;
+        }
+
+        .slidercontainer {
+            max-width: 60%;
+            position: relative;
+            margin: auto;
+        }
+
+        .left,
+        .right {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: rgb(255, 94, 0);
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .right {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .left:hover,
+        .right:hover {
+            background-color: rgba(115, 115, 115, 0.8);
+        }
+
+        .content {
+            color: #000000;
+            font-size: 30px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--header-->
+    <header>
+
+        <div class="header-container">
+            <!--header nav recipe here-->
+            <button type="button" class="header-nav"><a href="Recipe.html">Recipe</a></button>
+            <!--<div class="header-nav">Recipe</div>-->
+            <div class="header-bar">
+                <h1>Recipe Finder</h1>
+                <div class="summary">Create tasty meals from the ingredients you already have</div>
+                <div class="wrapper">
+                    <input type="text" class="input" placeholder="Type recipe here">
+                    <div class="searchbtn">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <!--header-->
+
+    <!--main-->
+    <main>
+
+        <h2>Make the most of those stored cupboard staples for any mealtime. Our easy recipes will help guide you
+            through how to make a delicious meal in no time.
+            <br> Find a wide variety of amazing recipes!
+        </h2>
+    </main>
+    <div class="slidercontainer">
+        <div class="showSlide fade">
+            <img src="slide1.jpg" />
+            <a style="display:block" href="fruit-recipes">
+                <div class="content">Fruit Recipes</div>
+            </a>
+        </div>
+        <div class="showSlide fade">
+            <img src="slide2.jpg" />
+            <a style="display:block" href="carb-recipes">
+                <div class="content">Carb recipes</div>
+            </a>
+        </div>
+
+        <div class="showSlide fade">
+            <img src="slide3.jpg" />
+            <a style="display:block" href="protein-recipes">
+                <div class="content">Protein recipes</div>
+            </a>
+        </div>
+        <div class="showSlide fade">
+            <img src="slide4.jpg" />
+            <a style="display:block" href="veg-recipes">
+                <div class="content">Vegetable recipes</div>
+            </a>
+        </div>
+        <!-- Navigation arrows -->
+        <a class="left" onclick="nextSlide(-1)">❮</a>
+        <a class="right" onclick="nextSlide(1)">❯</a>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        var slide_index = 1;
+        displaySlides(slide_index);
+
+        function nextSlide(n) {
+            displaySlides(slide_index += n);
+        }
+
+        function currentSlide(n) {
+            displaySlides(slide_index = n);
+        }
+
+        function displaySlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("showSlide");
+            if (n > slides.length) { slide_index = 1 }
+            if (n < 1) { slide_index = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slide_index - 1].style.display = "block";
+        }
+
+
+    </script>
+    <footer>
+        <div class="footer">
+            <div class="footer-content"></div>
+            <div class="footer-section copy"></div>
+            &copy; Copyright 2020
+
+        </div>
+        <div class="footer-bottom"></div>
+        </div>
+    </footer>
+</body>
+
 </html>
