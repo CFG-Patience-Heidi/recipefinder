@@ -72,6 +72,7 @@
    height: 3px;
    float: left;
   margin-top: 50px;
+  margin-right:  auto;
     }
    
 .searchbtn {
@@ -83,8 +84,8 @@
   height: 29px;
   float: left;
   margin-top: 50px;
-   
-}
+  margin-right: auto;
+   }
 
 .searchbtn .fas{
   position: absolute;
