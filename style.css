@@ -6,7 +6,7 @@
       padding-right: 15px;
       position: relative;
       width: auto;
-      background-image: url(img/carrot.jpg)
+      background-image: url(img/carrot.jpg);
     }
    
       
@@ -24,9 +24,14 @@
    }
    
    h2{
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 25px;
-   }
+     font-family: Verdana;
+    font-size:15px;
+    font-style: unset;
+    font-weight: lighter;
+    margin-left: 30px;
+    text-align: center;
+
+      }
      
         
    
@@ -38,11 +43,11 @@
        align-self: left;
        color: white;
        height: 30px;
-   }
+          }
 
             
        
-    .wrapper {
+    /*.wrapper {
    max-width: 400px;
    float: left;
    top: 50%;
@@ -54,26 +59,31 @@
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
-    }
+    margin-right: auto;
+  }
+*/
 
-
-   .wrapper .input {
-   width: 315px;
+.input {
+   width: 310px;
    padding: 15px 20px;
    border: none;
    border-radius: 5px;    
    font-weight: bold;
-   height: 5px;
-   top: 10Px;
-   }
+   height: 3px;
+   float: left;
+    margin-top: 50px;
+    }
    
 .searchbtn {
   background: rgb(247, 190, 84);
-  width: 8%;
+  width: 35px;
   border-radius: 5px;
   position: relative;
   cursor: pointer;
   height: 29px;
+  float: left;
+  margin-top: 50px;
+   
 }
 
 .searchbtn .fas{
@@ -83,8 +93,8 @@
   transform: translate(-50%,-50%);
   font-size: 18px;
   width: 20px;
-  height: 30px;
-}
+  height: 15px;
+ }
 
 .header-nav {
 color: black;
